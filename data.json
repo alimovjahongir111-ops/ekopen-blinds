@@ -1,0 +1,16 @@
+{
+  "fabrics": [],
+  "fabricPhotos": {},
+  "fabricSamples": {},
+  "examples_full": [],
+  "examples_parts": [],
+  "settings": {},
+  "prices": {
+    "thin": 130,
+    "medium": 160,
+    "blackout_roller": 230,
+    "lisbon": 150,
+    "roma": 190,
+    "blackout_plisse": 230
+  }
+}
