@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EKOPEN — Жалюзи в Худжанде</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --white: #ffffff;
+  --offwhite: #f4f4f0;
+  --light: #eceae4;
+  --border: #d8d8d2;
+  --mid: #5a5a54;
+  --dark: #1a1a18;
+  --black: #0e0e0c;
+  --accent: #2a5f8f;
+  --accent-light: #ddeaf8;
+  --warn: #b85a08;
+  --ok: #25724a;
+  --whatsapp: #25d366;
+  --radius: 14px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.16);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--offwhite); color: var(--dark); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; transition: background 0.9s ease, color 0.9s ease; }
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+h1,h2,h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.2; }
+
+/* NAV */
+#navbar { position: fixed; top:0; left:0; right:0; z-index:100; background: rgba(244,244,240,0.94); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s, background 0.9s; }
+.nav-inner { max-width:1120px; margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; }
+.logo { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; letter-spacing:0.08em; color:var(--black); }
+.logo-dot { color:var(--accent); }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { text-decoration:none; color:var(--mid); font-size:0.87rem; transition:color 0.2s; }
+.nav-links a:hover { color:var(--dark); }
+.admin-link { color:var(--mid); font-size:1.1rem; text-decoration:none; transition:color 0.2s; }
+.admin-link:hover { color:var(--accent); }
+
+/* HERO */
+.hero { min-height:100vh; display:flex; align-items:center; padding:100px 24px 60px; max-width:1120px; margin:0 auto; gap:60px; }
+.hero-content { flex:1; max-width:520px; }
+.hero-eyebrow { font-size:0.78rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--mid); margin-bottom:20px; }
+.hero-title { font-size:clamp(3rem,6vw,5rem); font-weight:300; color:var(--black); margin-bottom:24px; line-height:1.05; transition:color 0.9s; }
+.hero-title em { font-style:italic; color:var(--accent); }
+.hero-sub { font-size:1rem; color:var(--mid); line-height:1.7; margin-bottom:36px; max-width:400px; transition:color 0.9s; }
+.hero-visual { flex:1; display:flex; justify-content:center; align-items:center; }
+.btn-primary { display:inline-block; padding:14px 32px; background:var(--dark); color:var(--white); text-decoration:none; font-size:0.87rem; letter-spacing:0.04em; border-radius:40px; transition:background 0.2s, transform 0.2s; }
+.btn-primary:hover { background:var(--accent); transform:translateY(-1px); }
+
+/* Window animation */
+.win-frame { width:280px; height:360px; border:2.5px solid #b8b8b0; border-radius:6px; background:linear-gradient(180deg,#ddeeff,#eef6ff); position:relative; overflow:hidden; box-shadow:var(--shadow-lg); animation:windowLoad 1.2s ease both; }
+@keyframes windowLoad { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.win-blind { position:absolute; top:0; left:0; right:0; height:60%; background:repeating-linear-gradient(180deg,rgba(255,255,255,.85) 0px,rgba(255,255,255,.85) 12px,rgba(200,210,220,.6) 12px,rgba(200,210,220,.6) 13px,rgba(240,245,250,.7) 13px,rgba(240,245,250,.7) 25px,rgba(180,195,210,.5) 25px,rgba(180,195,210,.5) 26px); animation:blindDrop 1.5s .3s ease both; transform-origin:top; }
+@keyframes blindDrop { from{transform:scaleY(0)} to{transform:scaleY(1)} }
+.win-sill { position:absolute; bottom:0; left:-5px; right:-5px; height:20px; background:#c8c8c0; border-radius:2px; }
+.win-reflection { position:absolute; top:20px; left:20px; width:30px; height:80px; background:rgba(255,255,255,.3); border-radius:20px; transform:rotate(-15deg); }
+
+/* SECTION */
+.section-label { font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--mid); margin-bottom:12px; }
+.section-title { font-size:clamp(2rem,4vw,3rem); font-weight:300; color:var(--black); margin-bottom:52px; line-height:1.15; }
+
+/* GUIDE */
+.guide { padding:100px 0; background:var(--white); transition:background 0.9s; }
+.guide-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
+.guide-card { background:var(--offwhite); border:1px solid var(--border); border-radius:var(--radius); padding:32px; transition:box-shadow 0.3s; }
+.guide-card:hover { box-shadow:var(--shadow); }
+.guide-card-warn { background:#fff5eb; border-color:#e0c8a8; }
+.guide-icon { width:80px; height:80px; margin-bottom:20px; }
+.guide-icon svg { width:100%; height:100%; }
+.guide-num { font-family:'Cormorant Garamond',serif; font-size:2.5rem; color:var(--border); margin-bottom:12px; line-height:1; }
+.guide-card h3 { font-size:1.2rem; margin-bottom:12px; color:var(--black); }
+.guide-card p { font-size:.88rem; color:var(--mid); line-height:1.7; }
+.guide-tip { margin-top:16px; padding:10px 14px; border-radius:8px; font-size:.8rem; font-weight:500; }
+.tip-ok { background:#e2f2ea; color:var(--ok); }
+.tip-warn { background:#fef0e0; color:var(--warn); }
+
+/* CALCULATOR */
+.calculator-section { padding:100px 0; background:var(--offwhite); transition:background 0.9s; }
+.calc-wrapper { display:grid; grid-template-columns:1fr 380px; gap:32px; align-items:start; }
+.calc-form { display:flex; flex-direction:column; }
+.calc-step { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-bottom:16px; transition:background 0.9s, border-color 0.9s; }
+.calc-step.hidden { display:none; }
+.step-header { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+.step-num { width:28px; height:28px; background:var(--dark); color:var(--white); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.78rem; font-weight:500; flex-shrink:0; }
+.step-label { font-size:.95rem; font-weight:500; color:var(--dark); }
+.step-hint { font-size:.82rem; color:var(--mid); margin-bottom:16px; margin-top:-12px; }
+
+/* Type Cards */
+.type-cards { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.type-card { border:2px solid var(--border); border-radius:var(--radius); padding:20px; cursor:pointer; transition:all 0.2s; text-align:center; }
+.type-card:hover { border-color:var(--accent); background:var(--accent-light); }
+.type-card.active { border-color:var(--accent); background:var(--accent-light); }
+.type-icon { font-size:1.8rem; margin-bottom:10px; display:flex; justify-content:center; align-items:center; }
+.type-name { font-size:.9rem; font-weight:500; color:var(--dark); margin-bottom:6px; }
+.type-desc { font-size:.78rem; color:var(--mid); }
+
+/* Fabric */
+.fabric-options { display:flex; flex-direction:column; gap:10px; }
+.fabric-opt { display:flex; align-items:center; gap:14px; padding:12px 14px; border:2px solid var(--border); border-radius:10px; cursor:pointer; transition:all 0.2s; }
+.fabric-opt:hover { border-color:var(--accent); background:var(--accent-light); }
+.fabric-opt.active { border-color:var(--accent); background:var(--accent-light); }
+.fab-swatch { width:56px; height:44px; border-radius:8px; flex-shrink:0; border:1px solid var(--border); overflow:hidden; }
+.fab-swatch img { width:100%; height:100%; object-fit:cover; display:block; }
+.fab-name { font-size:.9rem; font-weight:500; color:var(--dark); }
+.fab-price { font-size:.82rem; color:var(--mid); margin-top:2px; }
+
+/* Examples */
+.examples-section { margin-top:20px; padding-top:16px; border-top:1px solid var(--border); }
+.examples-title { font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--mid); margin-bottom:10px; }
+.examples-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.example-thumb { aspect-ratio:4/3; border-radius:8px; overflow:hidden; cursor:pointer; border:1px solid var(--border); background:var(--light); transition:transform 0.2s, box-shadow 0.2s; }
+.example-thumb:hover { transform:scale(1.03); box-shadow:var(--shadow); }
+.example-thumb img { width:100%; height:100%; object-fit:cover; }
+.example-thumb-empty { aspect-ratio:4/3; border-radius:8px; border:1px dashed var(--border); display:flex; align-items:center; justify-content:center; font-size:1.4rem; color:var(--border); background:var(--offwhite); }
+.no-examples { font-size:.8rem; color:#aaa; font-style:italic; padding:4px 0 8px; }
+
+/* Dims */
+.dims-row { display:flex; align-items:flex-end; gap:12px; }
+.dim-input-wrap { flex:1; }
+.dim-input-wrap label { display:block; font-size:.78rem; color:var(--mid); margin-bottom:6px; }
+.dim-input-wrap input { width:100%; padding:12px 14px; border:2px solid var(--border); border-radius:10px; font-size:1rem; font-family:'DM Sans',sans-serif; color:var(--dark); background:var(--offwhite); outline:none; transition:border-color 0.2s; }
+.dim-input-wrap input:focus { border-color:var(--accent); background:var(--white); }
+.dim-sep { font-size:1.4rem; color:var(--mid); padding-bottom:12px; }
+
+/* Toggle */
+.toggle-row { display:flex; gap:10px; margin-top:4px; }
+.toggle-btn { flex:1; padding:12px; border:2px solid var(--border); border-radius:10px; background:var(--offwhite); font-family:'DM Sans',sans-serif; font-size:.9rem; cursor:pointer; color:var(--dark); transition:all 0.2s; }
+.toggle-btn:hover { border-color:var(--accent); }
+.toggle-btn.active { background:var(--accent); color:var(--white); border-color:var(--accent); }
+.top-warn { margin-top:14px; padding:12px 16px; background:#fff3e0; border:1px solid #e0c890; border-radius:10px; font-size:.84rem; color:var(--warn); line-height:1.5; }
+
+/* Sash */
+.sash-item { display:flex; align-items:center; gap:10px; padding:14px; background:var(--offwhite); border:1px solid var(--border); border-radius:10px; margin-bottom:10px; animation:fadeIn .2s ease; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+.sash-num { width:28px; height:28px; background:var(--accent-light); color:var(--accent); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.78rem; font-weight:600; flex-shrink:0; }
+.sash-inputs { display:flex; gap:8px; flex:1; }
+.sash-inputs input { flex:1; padding:8px 10px; border:2px solid var(--border); border-radius:8px; font-size:.88rem; font-family:'DM Sans',sans-serif; color:var(--dark); background:var(--white); outline:none; transition:border-color 0.2s; }
+.sash-inputs input:focus { border-color:var(--accent); }
+.sash-inputs input::placeholder { font-size:.78rem; color:#bbb; }
+.sash-area { font-size:.8rem; color:var(--accent); font-weight:500; min-width:52px; text-align:center; }
+.sash-remove { width:28px; height:28px; border:none; background:#fde8e8; color:#c0392b; border-radius:50%; cursor:pointer; font-size:.9rem; display:flex; align-items:center; justify-content:center; transition:background 0.2s; }
+.sash-remove:hover { background:#fcd0d0; }
+.btn-add-sash { width:100%; padding:12px; border:2px dashed var(--border); border-radius:10px; background:transparent; font-family:'DM Sans',sans-serif; font-size:.88rem; color:var(--accent); cursor:pointer; transition:all 0.2s; margin-top:4px; }
+.btn-add-sash:hover { border-color:var(--accent); background:var(--accent-light); }
+
+/* Result */
+.calc-result { position:sticky; top:80px; }
+.result-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow); transition:background 0.9s, border-color 0.9s; }
+.result-header { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--dark); margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--border); }
+.window-preview { width:100%; min-height:140px; background:var(--offwhite); border:1px solid var(--border); border-radius:10px; margin-bottom:20px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.preview-placeholder { text-align:center; color:var(--mid); }
+.preview-placeholder p { font-size:.82rem; margin-top:10px; }
+.preview-window-svg { width:100%; height:140px; }
+.result-items { display:flex; flex-direction:column; gap:8px; margin-bottom:16px; }
+.result-item { display:flex; justify-content:space-between; align-items:center; padding:10px 12px; background:var(--offwhite); border-radius:8px; font-size:.84rem; animation:fadeIn .2s ease; }
+.result-item-label { color:var(--mid); }
+.result-item-value { font-weight:500; color:var(--dark); }
+.result-total { padding:18px; background:var(--dark); border-radius:10px; margin-bottom:16px; text-align:center; }
+.result-total.hidden { display:none; }
+.total-label { font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:6px; }
+.total-price { font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--white); font-weight:600; }
+.total-note { font-size:.72rem; color:rgba(255,255,255,.4); margin-top:6px; }
+.result-cta.hidden { display:none; }
+.btn-whatsapp { width:100%; padding:14px; background:var(--whatsapp); color:var(--white); border:none; border-radius:40px; font-family:'DM Sans',sans-serif; font-size:.9rem; font-weight:500; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:background 0.2s, transform 0.2s; }
+.btn-whatsapp:hover { background:#20ba57; transform:translateY(-1px); }
+.btn-lg { padding:18px 36px; font-size:1rem; border-radius:50px; }
+.cta-note { text-align:center; font-size:.78rem; color:var(--mid); margin-top:10px; }
+
+/* Catalog */
+.catalog-section { padding:100px 0; background:var(--white); transition:background 0.9s; }
+.catalog-filters { display:flex; gap:10px; margin-bottom:36px; flex-wrap:wrap; }
+.filter-btn { padding:8px 20px; border:2px solid var(--border); border-radius:30px; background:transparent; font-family:'DM Sans',sans-serif; font-size:.84rem; color:var(--mid); cursor:pointer; transition:all 0.2s; }
+.filter-btn:hover { border-color:var(--dark); color:var(--dark); }
+.filter-btn.active { background:var(--dark); color:var(--white); border-color:var(--dark); }
+.catalog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
+.catalog-card { border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:var(--offwhite); transition:box-shadow 0.3s, transform 0.3s; }
+.catalog-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-3px); }
+.card-img { height:180px; overflow:hidden; position:relative; }
+.card-img-inner { width:100%; height:100%; transition:transform .5s ease; }
+.catalog-card:hover .card-img-inner { transform:scale(1.04); }
+.card-body { padding:18px; }
+.card-tag { font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--mid); margin-bottom:6px; }
+.card-name { font-family:'Cormorant Garamond',serif; font-size:1.25rem; color:var(--dark); margin-bottom:4px; }
+.card-desc { font-size:.8rem; color:var(--mid); margin-bottom:12px; }
+.card-price { font-size:.95rem; font-weight:500; color:var(--accent); }
+
+/* Contact */
+.contact-section { padding:100px 0; background:var(--dark); }
+.contact-inner { display:flex; align-items:center; justify-content:space-between; gap:48px; flex-wrap:wrap; }
+.contact-details { margin-top:24px; display:flex; flex-direction:column; gap:10px; }
+.contact-item { font-size:.9rem; color:rgba(255,255,255,.6); }
+
+/* Footer */
+.footer { padding:28px 0; border-top:1px solid var(--border); background:var(--offwhite); }
+.footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+
+/* Lightbox */
+.lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.9); z-index:999; align-items:center; justify-content:center; }
+.lightbox.open { display:flex; }
+.lightbox img { max-width:90vw; max-height:85vh; border-radius:8px; object-fit:contain; }
+.lightbox-close { position:absolute; top:20px; right:24px; color:#fff; font-size:2rem; cursor:pointer; background:none; border:none; line-height:1; }
+
+@media(max-width:900px){
+  .hero{flex-direction:column;min-height:auto;padding:100px 24px 60px;gap:40px}
+  .hero-content{max-width:100%}
+  .calc-wrapper{grid-template-columns:1fr}
+  .calc-result{position:static}
+  .contact-inner{flex-direction:column;align-items:flex-start}
+  .contact-cta{width:100%}
+  .btn-whatsapp.btn-lg{width:100%}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .type-cards{grid-template-columns:1fr}
+  .dims-row{flex-wrap:wrap}
+  .dim-sep{display:none}
+  .catalog-grid{grid-template-columns:1fr 1fr}
+  .examples-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:420px){.catalog-grid{grid-template-columns:1fr}}
+
+.subtype-tab {
+  padding: 8px 18px;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .84rem;
+  color: var(--mid);
+  cursor: pointer;
+  transition: all .2s;
+}
+.subtype-tab.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* Force catalog card text to always be dark regardless of lighting */
+.catalog-card .card-body { background: #ffffff !important; }
+.catalog-card .card-tag { color: #888880 !important; }
+.catalog-card .card-name { color: #1a1a18 !important; }
+.catalog-card .card-desc { color: #555550 !important; }
+.catalog-card .card-price { color: #2a5f8f !important; }
+.catalog-card { background: #fafaf8 !important; }
+
+/* Lighting transition indicator */
+#lightToast { transition: opacity .5s ease; }
+
+/* Smooth all bg transitions */
+body { transition: background 0.7s ease, color 0.7s ease !important; }
+.guide, .calculator-section, .catalog-section { transition: background 0.7s ease !important; }
+.calc-step, .result-card, .guide-card { transition: background 0.7s ease, border-color 0.7s ease !important; }
+.type-card, .fabric-opt { transition: background 0.2s ease, border-color 0.2s ease !important; }
+#navbar { transition: background 0.7s ease, border-color 0.7s ease !important; }
+
+/* Beautiful fabric active glow */
+.fabric-opt.active {
+  box-shadow: 0 0 0 3px var(--accent) !important;
+}
+
+/* Type card hover lift */
+.type-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* Sash item slide in */
+.sash-item {
+  animation: slideIn .25s ease both;
+}
+@keyframes slideIn {
+  from { opacity:0; transform:translateX(-10px); }
+  to { opacity:1; transform:translateX(0); }
+}
+
+/* Stats pulse on scroll */
+.why-stat {
+  transition: transform .2s;
+}
+.why-stat:hover {
+  transform: scale(1.03);
+}
+
+
+
+.sample-card {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2.5px solid transparent;
+  transition: border-color .2s, transform .2s;
+  position: relative;
+}
+.sample-card:hover { transform: scale(1.03); }
+.sample-card.selected { border-color: #2a5f8f; box-shadow: 0 0 0 3px rgba(42,95,143,0.2); }
+.sample-name {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: .68rem;
+  padding: 4px 6px;
+  text-align: center;
+}
+.sample-dot {
+  border-radius: 50% !important;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo">EKOPEN<span class="logo-dot">.</span></div>
+    <div class="nav-links">
+      <a href="#calculator">Калькулятор</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#guide">Как измерить</a>
+      <a href="#contact">Контакт</a>
+    </div>
+    <a href="admin.html" class="admin-link">⚙</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Жалюзи · Худжанд</p>
+    <h1 class="hero-title">Свет<br><em>под контролем</em></h1>
+    <p class="hero-sub">Рулонные шторы и плиссе — измерьте окно и получите точную цену онлайн за 2 минуты.</p>
+    <a href="#calculator" class="btn-primary">Рассчитать стоимость</a>
+  </div>
+  <div class="hero-visual">
+    <div class="win-frame">
+      <div class="win-blind"></div>
+      <div class="win-sill"></div>
+      <div class="win-reflection"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE -->
+<section class="guide" id="guide">
+  <div class="container">
+    <div class="section-label">Как замерить</div>
+    <h2 class="section-title">Правильный замер —<br>идеальная посадка</h2>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="guide-icon">
+          <svg viewBox="0 0 80 80" fill="none">
+            <rect x="10" y="10" width="60" height="60" rx="2" stroke="#333" stroke-width="2" fill="#f0f4f8"/>
+            <rect x="10" y="10" width="60" height="15" rx="2" fill="#d0e4f7" stroke="#333" stroke-width="1.5"/>
+            <rect x="10" y="28" width="60" height="42" fill="#e8f3fc" stroke="#333" stroke-width="1.5"/>
+            <rect x="12" y="29" width="56" height="30" fill="rgba(37,99,235,0.15)" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2"/>
+            <text x="40" y="75" text-anchor="middle" font-size="7" fill="#2563eb">← ширина →</text>
+          </svg>
+        </div>
+        <div class="guide-num">01</div>
+        <h3>Целиком на откос</h3>
+        <p>Если вверху окна есть <strong>глухое окошко</strong> — замер берётся по всему откосу. Жалюзи устанавливаются внутри откоса. Минимальный зазор сверху: <strong>8 см</strong>.</p>
+        <div class="guide-tip tip-ok">✓ Глухое окошко вверху — можно ставить внутри откоса</div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">
+          <svg viewBox="0 0 80 80" fill="none">
+            <rect x="5" y="10" width="32" height="60" rx="2" stroke="#333" stroke-width="2" fill="#e8f3fc"/>
+            <rect x="43" y="10" width="32" height="60" rx="2" stroke="#333" stroke-width="2" fill="#e8f3fc"/>
+            <rect x="7" y="12" width="28" height="25" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <rect x="45" y="12" width="28" height="35" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <text x="21" y="50" text-anchor="middle" font-size="7" fill="#ea580c">створка 1</text>
+            <text x="59" y="58" text-anchor="middle" font-size="7" fill="#ea580c">створка 2</text>
+          </svg>
+        </div>
+        <div class="guide-num">02</div>
+        <h3>По каждой створке</h3>
+        <p>Каждая створка измеряется <strong>отдельно</strong>. Подходит для плиссе. Минимальная площадь за одну створку — <strong>1 м²</strong>. Если меньше — округляется до 1 м².</p>
+        
+      </div>
+      <div class="guide-card guide-card-warn">
+        <div class="guide-num">!</div>
+        <h3>Нет глухого окошка вверху?</h3>
+        <p>Если вверху рамы нет неоткрывающегося окошка, жалюзи внутри откоса <strong>заблокируют</strong> открывающуюся часть окна.</p>
+        <p style="margin-top:14px;font-weight:500;color:#b85a08">В таком случае у вас два варианта:</p>
+
+        <div style="margin-top:12px;padding:12px 14px;background:#fff8f0;border-radius:10px;border:1px solid #e8d0b0">
+          <div style="font-weight:600;font-size:.9rem;color:#1a1a18;margin-bottom:4px">📐 Вариант 1 — Снаружи откоса</div>
+          <div style="font-size:.82rem;color:#555;line-height:1.6">Жалюзи крепятся поверх рамы. Замер по откосу, затем добавьте:<br>
+          <strong>+10 см слева · +10 см справа · +15 см сверху</strong></div>
+        </div>
+
+        <div style="margin-top:10px;padding:12px 14px;background:#f0f5ff;border-radius:10px;border:1px solid #c0d0e8">
+          <div style="font-weight:600;font-size:.9rem;color:#1a1a18;margin-bottom:4px">🪟 Вариант 2 — По каждой створке</div>
+          <div style="font-size:.82rem;color:#555;line-height:1.6">Жалюзи крепятся на каждую створку отдельно. Замерьте ширину и высоту каждой части окна.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calculator-section" id="calculator">
+  <div class="container">
+    <div class="section-label">Калькулятор</div>
+    <h2 class="section-title">Рассчитайте стоимость<br>прямо сейчас</h2>
+    <div class="calc-wrapper">
+      <div class="calc-form">
+
+        <!-- STEP 1 -->
+        <div class="calc-step" id="step1">
+          <div class="step-header"><span class="step-num">1</span><span class="step-label">Выберите способ установки</span></div>
+          <div class="type-cards">
+            <div class="type-card" data-type="full" onclick="selectType('full')">
+              <div class="type-icon">
+                <svg viewBox="0 0 80 60" fill="none" width="80" height="60">
+                  <rect x="4" y="4" width="72" height="52" rx="3" fill="#e8f3fc" stroke="#a0b8c8" stroke-width="2"/>
+                  <rect x="4" y="4" width="72" height="13" rx="3" fill="#cce0f0" stroke="#a0b8c8" stroke-width="1.5"/>
+                  <rect x="6" y="18" width="68" height="36" fill="#ddeeff"/>
+                  <!-- Blind stripes -->
+                  <rect x="6" y="18" width="68" height="28" fill="rgba(100,150,200,0.35)"/>
+                  <line x1="6" y1="22" x2="74" y2="22" stroke="white" stroke-width="1" opacity="0.6"/>
+                  <line x1="6" y1="28" x2="74" y2="28" stroke="white" stroke-width="1" opacity="0.6"/>
+                  <line x1="6" y1="34" x2="74" y2="34" stroke="white" stroke-width="1" opacity="0.6"/>
+                  <line x1="6" y1="40" x2="74" y2="40" stroke="white" stroke-width="1" opacity="0.6"/>
+                  <!-- Frame bars -->
+                  <line x1="40" y1="18" x2="40" y2="56" stroke="#a0b8c8" stroke-width="1.5"/>
+                  <rect x="0" y="52" width="80" height="8" rx="2" fill="#c8c0b0"/>
+                </svg>
+              </div>
+              <div>
+                <div class="type-name">Внутри откоса — сплошное полотно</div>
+                <div class="type-desc">Один замер на всё окно. Нужно глухое окошко вверху.</div>
+              </div>
+            </div>
+            <div class="type-card" data-type="outside" onclick="selectType('outside')" style="display:flex;align-items:center;gap:16px;text-align:left;padding:16px 20px">
+              <div class="type-icon" style="flex-shrink:0">
+                <svg viewBox="0 0 80 60" fill="none" width="80" height="60">
+                  <rect x="4" y="4" width="72" height="52" rx="3" fill="#e8f3fc" stroke="#a0b8c8" stroke-width="2"/>
+                  <rect x="4" y="4" width="72" height="13" rx="3" fill="#cce0f0" stroke="#a0b8c8" stroke-width="1.5"/>
+                  <rect x="6" y="18" width="68" height="36" fill="#ddeeff"/>
+                  <!-- Blind outside - bigger, overlapping frame -->
+                  <rect x="-2" y="0" width="84" height="32" fill="rgba(100,150,200,0.4)" rx="2"/>
+                  <line x1="-2" y1="6" x2="82" y2="6" stroke="white" stroke-width="1.2" opacity="0.7"/>
+                  <line x1="-2" y1="13" x2="82" y2="13" stroke="white" stroke-width="1.2" opacity="0.7"/>
+                  <line x1="-2" y1="20" x2="82" y2="20" stroke="white" stroke-width="1.2" opacity="0.7"/>
+                  <line x1="-2" y1="27" x2="82" y2="27" stroke="white" stroke-width="1.2" opacity="0.7"/>
+                  <line x1="40" y1="18" x2="40" y2="56" stroke="#a0b8c8" stroke-width="1.5"/>
+                  <rect x="0" y="52" width="80" height="8" rx="2" fill="#c8c0b0"/>
+                </svg>
+              </div>
+              <div>
+                <div class="type-name">Снаружи откоса</div>
+                <div class="type-desc">Жалюзи крепятся поверх рамы. Добавьте +10+10+15 см к замерам.</div>
+              </div>
+            </div>
+            <div class="type-card" data-type="parts" onclick="selectType('parts')" style="display:flex;align-items:center;gap:16px;text-align:left;padding:16px 20px">
+              <div class="type-icon">
+                <svg viewBox="0 0 80 60" fill="none" width="80" height="60">
+                  <!-- Left sash -->
+                  <rect x="4" y="4" width="33" height="52" rx="3" fill="#e8f3fc" stroke="#a0b8c8" stroke-width="2"/>
+                  <rect x="6" y="6" width="29" height="38" fill="#ddeeff"/>
+                  <rect x="6" y="6" width="29" height="28" fill="rgba(100,150,200,0.35)"/>
+                  <line x1="6" y1="11" x2="35" y2="11" stroke="white" stroke-width="1" opacity="0.6"/>
+                  <line x1="6" y1="18" x2="35" y2="18" stroke="white" stroke-width="1" opacity="0.6"/>
+                  <line x1="6" y1="25" x2="35" y2="25" stroke="white" stroke-width="1" opacity="0.6"/>
+                  <!-- Right sash -->
+                  <rect x="43" y="4" width="33" height="52" rx="3" fill="#e8f3fc" stroke="#a0b8c8" stroke-width="2"/>
+                  <rect x="45" y="6" width="29" height="38" fill="#ddeeff"/>
+                  <rect x="45" y="6" width="29" height="28" fill="rgba(100,150,200,0.35)"/>
+                  <line x1="45" y1="11" x2="74" y2="11" stroke="white" stroke-width="1" opacity="0.6"/>
+                  <line x1="45" y1="18" x2="74" y2="18" stroke="white" stroke-width="1" opacity="0.6"/>
+                  <line x1="45" y1="25" x2="74" y2="25" stroke="white" stroke-width="1" opacity="0.6"/>
+                  <!-- Labels -->
+                  <text x="20" y="57" text-anchor="middle" font-size="7" fill="#888">створка 1</text>
+                  <text x="59" y="57" text-anchor="middle" font-size="7" fill="#888">створка 2</text>
+                </svg>
+              </div>
+              <div>
+                <div class="type-name">По каждой створке отдельно</div>
+                <div class="type-desc">Замер каждой части окна отдельно. Подходит при любом окне.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2A: Full window -->
+        <div class="calc-step hidden" id="step2_full">
+          <div class="step-header"><span class="step-num">2</span><span class="step-label">Выберите ткань</span></div>
+          <div class="fabric-options" id="fabricFull">
+            <div class="fabric-opt" data-price="130" data-name="День-Ночь Тонкие" data-density="thin" onclick="selectFabric(this,'full')">
+              <div class="fab-swatch" id="fswatch_full_0" style="background:linear-gradient(135deg,#eef3f8,#d8e8f4)"></div>
+              <div><div class="fab-name">День-Ночь Тонкие</div><div class="fab-price">130 сом/м²</div></div>
+            </div>
+            <div class="fabric-opt" data-price="160" data-name="День-Ночь Средние" data-density="medium" onclick="selectFabric(this,'full')">
+              <div class="fab-swatch" id="fswatch_full_1" style="background:linear-gradient(135deg,#c8c8c0,#e0e0d8)"></div>
+              <div><div class="fab-name">День-Ночь Средние</div><div class="fab-price">160 сом/м²</div></div>
+            </div>
+            <div class="fabric-opt" data-price="230" data-name="Blackout Плотные" data-density="thick" onclick="selectFabric(this,'full')">
+              <div class="fab-swatch" id="fswatch_full_2" style="background:linear-gradient(135deg,#444,#222)"></div>
+              <div><div class="fab-name">Blackout Плотные</div><div class="fab-price">230 сом/м²</div></div>
+            </div>
+          </div>
+
+          <!-- Examples full -->
+          <div class="examples-section">
+            <div class="examples-title">Примеры готовых работ</div>
+            <div class="examples-grid" id="examplesGrid_full"></div>
+          </div>
+
+          <div class="step-header" style="margin-top:24px"><span class="step-num">3</span><span class="step-label">Введите размеры откоса</span></div>
+
+          <!-- Inside note (shown by default) -->
+          <div id="insideNote" style="margin-bottom:14px;padding:12px 14px;background:#e8f0f8;border:1px solid #b8cce0;border-radius:10px;font-size:.82rem;color:#1a3a5c;line-height:1.7">
+            <strong>📏 Замер внутри откоса:</strong><br>
+            Измерьте ширину и высоту точно по откосу (внутренний проём).
+          </div>
+          <!-- Outside note (shown when outside type selected) -->
+          <div id="outsideNote" style="display:none;margin-bottom:14px;padding:12px 14px;background:#eaf4ea;border:1px solid #b8d8b8;border-radius:10px;font-size:.82rem;color:#1e5c1e;line-height:1.7">
+            <strong>📐 Замер снаружи откоса:</strong><br>
+            Измерьте откос, затем добавьте к размерам:<br>
+            <span style="display:inline-block;margin-top:4px"><strong>+10 см слева &nbsp;·&nbsp; +10 см справа &nbsp;·&nbsp; +15 см сверху</strong></span>
+          </div>
+
+          <div class="dims-row">
+            <div class="dim-input-wrap"><label>Ширина (см)</label><input type="number" id="fullWidth" placeholder="напр. 150" min="10" oninput="calcFull()"></div>
+            <div class="dim-sep">×</div>
+            <div class="dim-input-wrap"><label>Высота (см)</label><input type="number" id="fullHeight" placeholder="напр. 180" min="10" oninput="calcFull()"></div>
+          </div>
+
+          <div class="step-header" style="margin-top:24px"><span class="step-num">4</span><span class="step-label">Есть ли глухое окошко вверху?</span></div>
+          <p class="step-hint">Маленькое неоткрывающееся окошко вверху пластиковой рамы</p>
+          <div class="toggle-row">
+            <button class="toggle-btn" id="topYes" onclick="setTop(true)">Да, есть</button>
+            <button class="toggle-btn" id="topNo" onclick="setTop(false)">Нет</button>
+          </div>
+          <div class="top-warn hidden" id="topWarn">⚠️ Без глухого окошка жалюзи заблокируют открывающую часть. Рекомендуем <strong>по створкам</strong>.</div>
+        </div>
+
+        <!-- STEP 2B: Parts -->
+        <div class="calc-step hidden" id="step2_parts">
+          <div class="step-header"><span class="step-num">2</span><span class="step-label">Выберите тип ткани</span></div>
+          
+          <!-- Sub-type selector -->
+          <div class="subtype-tabs" style="display:flex;gap:8px;margin-bottom:16px">
+            <button class="subtype-tab active" id="tab_dn" onclick="switchPartsType('dn')">День-Ночь</button>
+            <button class="subtype-tab" id="tab_plisse" onclick="switchPartsType('plisse')">Плиссе</button>
+          </div>
+
+          <!-- День-Ночь fabrics -->
+          <div id="fabricPartsGroup_dn">
+            <div class="fabric-options" id="fabricParts_dn">
+              <div class="fabric-opt" data-price="130" data-name="День-Ночь Тонкие" data-density="thin" onclick="selectFabric(this,'parts')">
+                <div class="fab-swatch" style="background:linear-gradient(135deg,#eef3f8,#d8e8f4)"></div>
+                <div><div class="fab-name">День-Ночь Тонкие</div><div class="fab-price">130 сом/м²</div></div>
+              </div>
+              <div class="fabric-opt" data-price="160" data-name="День-Ночь Средние" data-density="medium" onclick="selectFabric(this,'parts')">
+                <div class="fab-swatch" style="background:linear-gradient(135deg,#c8c8c0,#e0e0d8)"></div>
+                <div><div class="fab-name">День-Ночь Средние</div><div class="fab-price">160 сом/м²</div></div>
+              </div>
+              <div class="fabric-opt" data-price="230" data-name="Blackout Плотные" data-density="thick" onclick="selectFabric(this,'parts')">
+                <div class="fab-swatch" style="background:linear-gradient(135deg,#444,#222)"></div>
+                <div><div class="fab-name">Blackout Плотные</div><div class="fab-price">230 сом/м²</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Плиссе fabrics -->
+          <div id="fabricPartsGroup_plisse" style="display:none">
+            <div class="fabric-options" id="fabricParts_plisse">
+              <div class="fabric-opt" data-price="150" data-name="Plisse Lisbon" data-density="medium" onclick="selectFabric(this,'parts')">
+                <div class="fab-swatch" style="background:linear-gradient(135deg,#dce8f0,#b8d0e0)"></div>
+                <div><div class="fab-name">Plisse Lisbon</div><div class="fab-price">150 сом/м²</div></div>
+              </div>
+              <div class="fabric-opt" data-price="190" data-name="Plisse Roma" data-density="medium" onclick="selectFabric(this,'parts')">
+                <div class="fab-swatch" style="background:linear-gradient(135deg,#e8e0d4,#d0c4b0)"></div>
+                <div><div class="fab-name">Plisse Roma</div><div class="fab-price">190 сом/м²</div></div>
+              </div>
+              <div class="fabric-opt" data-price="230" data-name="Plisse Blackout" data-density="thick" onclick="selectFabric(this,'parts')">
+                <div class="fab-swatch" style="background:linear-gradient(135deg,#333,#111)"></div>
+                <div><div class="fab-name">Plisse Blackout</div><div class="fab-price">230 сом/м²</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Examples parts -->
+          <div class="examples-section">
+            <div class="examples-title">Примеры готовых работ</div>
+            <div class="examples-grid" id="examplesGrid_parts"></div>
+          </div>
+
+          <div class="step-header" style="margin-top:24px"><span class="step-num">3</span><span class="step-label">Добавьте створки</span></div>
+          <p class="step-hint">Добавьте каждую створку отдельно. Минимум 1 м² за створку.</p>
+          <div id="sashList"></div>
+          <button class="btn-add-sash" onclick="addSash()">+ Добавить створку</button>
+        </div>
+
+      </div>
+
+      <!-- RESULT -->
+      <div class="calc-result">
+        <div class="result-card">
+          <div class="result-header">Расчёт стоимости</div>
+          <div class="window-preview" id="windowPreview">
+            <div class="preview-placeholder">
+              <svg viewBox="0 0 120 90" fill="none" width="80" opacity="0.25">
+                <rect x="5" y="5" width="110" height="80" rx="3" stroke="#888" stroke-width="2" fill="none"/>
+                <rect x="5" y="5" width="110" height="18" rx="3" fill="#ddd" stroke="#888" stroke-width="1"/>
+                <rect x="5" y="25" width="52" height="60" fill="#eee" stroke="#888" stroke-width="1"/>
+                <rect x="63" y="25" width="52" height="60" fill="#eee" stroke="#888" stroke-width="1"/>
+              </svg>
+              <p>Выберите параметры</p>
+            </div>
+          </div>
+          <div class="result-items" id="resultItems"></div>
+          <div class="result-total hidden" id="resultTotal">
+            <div class="total-label">Итого</div>
+            <div class="total-price" id="totalPrice">0 сом</div>
+            <p class="total-note">Финальная цена уточняется при замере специалистом</p>
+          </div>
+          <div class="result-cta hidden" id="resultCta">
+            <button class="btn-whatsapp" onclick="sendWhatsApp()">
+              <svg viewBox="0 0 24 24" fill="white" width="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Отправить заявку в WhatsApp
+            </button>
+            <p class="cta-note">Мы свяжемся с вами для уточнения деталей и замера</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="catalog-section" id="catalog">
+  <div class="container">
+    <div class="section-label">Каталог</div>
+    <h2 class="section-title">Наши коллекции</h2>
+    <div class="catalog-filters">
+      <button class="filter-btn active" onclick="filterCatalog('all',this)">Все</button>
+      <button class="filter-btn" onclick="filterCatalog('roller',this)">Рулонные</button>
+      <button class="filter-btn" onclick="filterCatalog('plisse',this)">Плиссе</button>
+      <button class="filter-btn" onclick="filterCatalog('blackout',this)">Blackout</button>
+    </div>
+    <div class="catalog-grid" id="catalogGrid"></div>
+  </div>
+</section>
+
+
+<!-- WHY US -->
+<section style="padding:90px 0;background:var(--offwhite)">
+  <div class="container">
+    <div class="section-label">Почему EKOPEN</div>
+    <h2 class="section-title">Мы делаем<br><em style="font-style:italic;color:var(--accent)">правильно</em></h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px">
+
+      <div style="padding:28px;background:var(--white);border:1px solid var(--border);border-radius:14px;position:relative;overflow:hidden">
+        <div style="font-size:2.2rem;margin-bottom:14px">📐</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--dark);margin-bottom:8px">Точный замер</div>
+        <div style="font-size:.84rem;color:var(--mid);line-height:1.7">Специалист приедет и замерит всё сам. Бесплатно. Без лишних вопросов.</div>
+        <div style="position:absolute;bottom:-10px;right:-10px;font-size:5rem;opacity:.04">📐</div>
+      </div>
+
+      <div style="padding:28px;background:var(--white);border:1px solid var(--border);border-radius:14px;position:relative;overflow:hidden">
+        <div style="font-size:2.2rem;margin-bottom:14px">⚡</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--dark);margin-bottom:8px">Быстрая установка</div>
+        <div style="font-size:.84rem;color:var(--mid);line-height:1.7">Изготовление и монтаж в короткие сроки. Работаем аккуратно — без пыли и мусора.</div>
+        <div style="position:absolute;bottom:-10px;right:-10px;font-size:5rem;opacity:.04">⚡</div>
+      </div>
+
+      <div style="padding:28px;background:var(--white);border:1px solid var(--border);border-radius:14px;position:relative;overflow:hidden">
+        <div style="font-size:2.2rem;margin-bottom:14px">🎨</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--dark);margin-bottom:8px">Большой выбор</div>
+        <div style="font-size:.84rem;color:var(--mid);line-height:1.7">Рулонные, плиссе, день-ночь, блэкаут — подберём под любой интерьер и бюджет.</div>
+        <div style="position:absolute;bottom:-10px;right:-10px;font-size:5rem;opacity:.04">🎨</div>
+      </div>
+
+      <div style="padding:28px;background:var(--dark);border:1px solid var(--dark);border-radius:14px;position:relative;overflow:hidden">
+        <div style="font-size:2.2rem;margin-bottom:14px">💬</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#e8e4dc;margin-bottom:8px">Консультация</div>
+        <div style="font-size:.84rem;color:rgba(232,228,220,0.55);line-height:1.7">Не знаете что выбрать? Напишите нам — расскажем, покажем и посоветуем лучший вариант.</div>
+        <div style="position:absolute;bottom:-10px;right:-10px;font-size:5rem;opacity:.06">💬</div>
+      </div>
+
+    </div>
+
+    <!-- Stats row -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:14px;overflow:hidden;margin-top:32px">
+      <div style="background:var(--white);padding:28px;text-align:center">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--dark);line-height:1">500+</div>
+        <div style="font-size:.78rem;color:var(--mid);margin-top:6px;letter-spacing:.05em">установок</div>
+      </div>
+      <div style="background:var(--white);padding:28px;text-align:center">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--dark);line-height:1">3</div>
+        <div style="font-size:.78rem;color:var(--mid);margin-top:6px;letter-spacing:.05em">года на рынке</div>
+      </div>
+      <div style="background:var(--white);padding:28px;text-align:center">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--dark);line-height:1">0</div>
+        <div style="font-size:.78rem;color:var(--mid);margin-top:6px;letter-spacing:.05em">рекламаций</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <div class="section-label">Контакт</div>
+        <h2 class="section-title" style="color:#fff">Остались вопросы?</h2>
+        <p style="color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.7">Наш специалист приедет на замер, поможет выбрать подходящий вариант и установит жалюзи профессионально.</p>
+        <div class="contact-details">
+          <div class="contact-item">📍 Худжанд, Таджикистан</div>
+          <div class="contact-item">📸 @ekopen.tjk</div>
+        </div>
+      </div>
+      <div class="contact-cta">
+        <button class="btn-whatsapp btn-lg" onclick="sendWhatsAppDirect()">
+          <svg viewBox="0 0 24 24" fill="white" width="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Написать в WhatsApp
+        </button>
+        <p style="color:rgba(255,255,255,.45);font-size:.8rem;margin-top:12px;text-align:center">Замер — бесплатно</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="logo">EKOPEN<span class="logo-dot">.</span></div>
+      <p style="color:#666;font-size:.82rem">© 2025 ekopen.tjk · Жалюзи в Худжанде</p>
+      <a href="admin.html" style="color:#777;font-size:.75rem;text-decoration:none">Админ-панель</a>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+
+
+<script>
+// ===== CONFIG =====
+var WA_NUMBER = '992000000000';
+
+// ===== FABRIC COLORS =====
+var fabricColors = {
+  'День-Ночь Тонкие': [
+    {name:'Белый', hex:'#f5f5f0', hex2:'#e8e8e0'},
+    {name:'Кремовый', hex:'#f5eedc', hex2:'#e8e0c8'},
+    {name:'Серый', hex:'#d0d0cc', hex2:'#b8b8b4'},
+    {name:'Бежевый', hex:'#e8dcc8', hex2:'#d8ccb4'},
+    {name:'Голубой', hex:'#c8dce8', hex2:'#b0c8dc'},
+    {name:'Мятный', hex:'#c8e4d8', hex2:'#b0d0c0'}
+  ],
+  'День-Ночь Средние': [
+    {name:'Белый', hex:'#f0f0ec', hex2:'#dcdcd8'},
+    {name:'Серый', hex:'#b8b8b0', hex2:'#a0a098'},
+    {name:'Тёмно-серый', hex:'#787870', hex2:'#606058'},
+    {name:'Бежевый', hex:'#d8cbb4', hex2:'#c8bba0'},
+    {name:'Коричневый', hex:'#a89070', hex2:'#907858'},
+    {name:'Антрацит', hex:'#484840', hex2:'#383830'}
+  ],
+  'Blackout Плотные': [
+    {name:'Чёрный', hex:'#1a1a18', hex2:'#0a0a08'},
+    {name:'Тёмно-серый', hex:'#383830', hex2:'#282820'},
+    {name:'Антрацит', hex:'#404038', hex2:'#303028'},
+    {name:'Тёмно-синий', hex:'#1a2840', hex2:'#101820'},
+    {name:'Шоколад', hex:'#382018', hex2:'#281408'},
+    {name:'Тёмно-зелёный', hex:'#182818', hex2:'#101808'}
+  ],
+  'Plisse Lisbon': [
+    {name:'Белый', hex:'#f4f4f0', hex2:'#e8e8e4'},
+    {name:'Жемчуг', hex:'#eee8d8', hex2:'#e0d8c4'},
+    {name:'Голубой', hex:'#c8dce8', hex2:'#b0ccd8'},
+    {name:'Лиловый', hex:'#dcd0e4', hex2:'#ccc0d4'},
+    {name:'Пудровый', hex:'#ecd8d8', hex2:'#dcc8c8'},
+    {name:'Фисташковый', hex:'#cce0cc', hex2:'#bcd0bc'}
+  ],
+  'Plisse Roma': [
+    {name:'Слоновая кость', hex:'#f0e8d4', hex2:'#e4d8c0'},
+    {name:'Капучино', hex:'#d4c0a0', hex2:'#c4b090'},
+    {name:'Тауп', hex:'#b8a890', hex2:'#a89880'},
+    {name:'Терракота', hex:'#c89070', hex2:'#b88060'},
+    {name:'Оливковый', hex:'#a8a880', hex2:'#989870'},
+    {name:'Коричневый', hex:'#906848', hex2:'#805838'}
+  ],
+  'Plisse Blackout': [
+    {name:'Чёрный', hex:'#141410', hex2:'#080806'},
+    {name:'Тёмно-серый', hex:'#303028', hex2:'#202018'},
+    {name:'Антрацит', hex:'#383830', hex2:'#282820'},
+    {name:'Тёмно-синий', hex:'#182030', hex2:'#101820'},
+    {name:'Бордо', hex:'#380810', hex2:'#280408'},
+    {name:'Тёмно-зелёный', hex:'#102010', hex2:'#081408'}
+  ]
+};
+
+// ===== STATE =====
+var state = {
+  type: null,
+  fabric: null,
+  color: null,
+  fullWidth: 0,
+  fullHeight: 0,
+  hasTopWindow: null,
+  sashes: [],
+  outsideMounting: false
+};
+
+// ===== LIGHTING =====
+var lightingThemes = {
+  thin:   {body:'#f8f8f4', nav:'rgba(248,248,244,0.95)', heroTitle:'#0e0e0c', heroSub:'#5a5a54', desc:'Тонкие — лёгкий дневной свет'},
+  medium: {body:'#c8c0a8', nav:'rgba(180,172,152,0.97)', heroTitle:'#1a1a12', heroSub:'#4a4a3a', desc:'Средние — приглушённый уютный свет'},
+  thick:  {body:'#0a0a08', nav:'rgba(8,8,6,0.98)',       heroTitle:'#e8e4d4', heroSub:'rgba(220,216,200,0.5)', desc:'Blackout — полная темнота'}
+};
+
+function applyLighting(density) {
+  var t = lightingThemes[density] || lightingThemes.thin;
+  var isDark = density === 'thick';
+  var isMed = density === 'medium';
+  var textColor = isDark ? '#e0dcc8' : isMed ? '#1a1a12' : '#1a1a18';
+  var midColor = isDark ? 'rgba(220,210,180,0.45)' : isMed ? '#4a4a38' : '#5a5a54';
+  var borderColor = isDark ? '#2a2a24' : isMed ? '#a8a090' : '#d8d8d2';
+  var stepBg = isDark ? '#141412' : isMed ? '#d4ccba' : '#ffffff';
+  var cardBg = isDark ? '#0e0e0c' : isMed ? '#c0b8a4' : '#ffffff';
+  var inputBg = isDark ? '#1c1c18' : isMed ? '#bcb4a0' : '#f4f4f0';
+
+  document.body.style.background = t.body;
+  document.body.style.color = textColor;
+
+  var nav = document.getElementById('navbar');
+  if(nav){nav.style.background=t.nav; nav.style.borderBottomColor=borderColor;}
+
+  var secs = ['guide','calculator-section','catalog-section'];
+  for(var si=0;si<secs.length;si++){
+    var secEls = document.querySelectorAll('.'+secs[si]);
+    for(var sei=0;sei<secEls.length;sei++) secEls[sei].style.background = isDark?'#0a0a08':isMed?'#c8c0a8':'';
+  }
+
+  var stepEls = document.querySelectorAll('.calc-step,.result-card');
+  for(var i=0;i<stepEls.length;i++){stepEls[i].style.background=stepBg;stepEls[i].style.borderColor=borderColor;}
+
+  var cardEls = document.querySelectorAll('.guide-card');
+  for(var i=0;i<cardEls.length;i++){cardEls[i].style.background=cardBg;cardEls[i].style.borderColor=borderColor;}
+
+  var typeEls = document.querySelectorAll('.type-card');
+  for(var i=0;i<typeEls.length;i++){if(!typeEls[i].classList.contains('active')){typeEls[i].style.background=cardBg;typeEls[i].style.borderColor=borderColor;}}
+
+  var fabEls = document.querySelectorAll('.result-item,.sash-item');
+  for(var i=0;i<fabEls.length;i++){fabEls[i].style.background=inputBg;fabEls[i].style.borderColor=borderColor;}
+
+  var inpEls = document.querySelectorAll('.dim-input-wrap input,.sash-inputs input');
+  for(var i=0;i<inpEls.length;i++){inpEls[i].style.background=inputBg;inpEls[i].style.color=textColor;inpEls[i].style.borderColor=borderColor;}
+
+  var txtEls = document.querySelectorAll('.step-label,.type-name,.fab-name,.result-header,.guide-card h3,.section-title');
+  for(var i=0;i<txtEls.length;i++) txtEls[i].style.color=textColor;
+
+  var midEls = document.querySelectorAll('.step-hint,.type-desc,.fab-price,.result-item-label,.guide-card p,.section-label');
+  for(var i=0;i<midEls.length;i++) midEls[i].style.color=midColor;
+
+  var fOptEls = document.querySelectorAll('.fabric-opt:not(.active)');
+  for(var i=0;i<fOptEls.length;i++){fOptEls[i].style.background=cardBg;fOptEls[i].style.borderColor=borderColor;}
+
+  var logo = document.querySelector('.logo');
+  if(logo) logo.style.color = isDark?'#e0dcc8':'#0e0e0c';
+
+  var ht = document.querySelector('.hero-title');
+  if(ht) ht.style.color = t.heroTitle;
+  var hs = document.querySelector('.hero-sub');
+  if(hs) hs.style.color = t.heroSub;
+
+  var wb = document.querySelector('.win-blind');
+  if(wb){
+    if(isDark) wb.style.background='repeating-linear-gradient(180deg,#1a1a18 0,#1a1a18 12px,#111 12px,#111 13px,#151513 13px,#151513 25px,#0a0a08 25px,#0a0a08 26px)';
+    else if(isMed) wb.style.background='repeating-linear-gradient(180deg,rgba(180,160,100,.7) 0,rgba(180,160,100,.7) 12px,rgba(150,130,80,.5) 12px,rgba(150,130,80,.5) 13px,rgba(170,150,90,.6) 13px,rgba(170,150,90,.6) 25px,rgba(140,120,70,.4) 25px,rgba(140,120,70,.4) 26px)';
+    else wb.style.background='';
+  }
+
+  var addEls = document.querySelectorAll('.btn-add-sash');
+  for(var i=0;i<addEls.length;i++){addEls[i].style.borderColor=borderColor;addEls[i].style.color=isDark?'#6a8ab0':isMed?'#5a5040':'';}
+
+  if(t.desc) showLightingToast('💡 '+t.desc, isDark, isMed);
+}
+
+function showLightingToast(text, isDark, isMed) {
+  var toast = document.getElementById('lightToast');
+  if(!toast){
+    toast = document.createElement('div');
+    toast.id = 'lightToast';
+    toast.style.position='fixed';
+    toast.style.top='80px';
+    toast.style.left='50%';
+    toast.style.transform='translateX(-50%)';
+    toast.style.padding='10px 22px';
+    toast.style.borderRadius='30px';
+    toast.style.fontSize='.82rem';
+    toast.style.fontFamily='DM Sans,sans-serif';
+    toast.style.zIndex='200';
+    toast.style.transition='opacity .4s';
+    toast.style.pointerEvents='none';
+    toast.style.whiteSpace='nowrap';
+    document.body.appendChild(toast);
+  }
+  toast.style.background = isDark?'rgba(20,20,16,0.92)':isMed?'rgba(80,70,50,0.88)':'rgba(30,30,28,0.82)';
+  toast.style.color = isDark?'#c8c0a0':isMed?'#f0e8d0':'#f0f0ec';
+  toast.style.opacity='1';
+  toast.textContent = text;
+  clearTimeout(window._lightToastTimer);
+  window._lightToastTimer = setTimeout(function(){ toast.style.opacity='0'; }, 2200);
+}
+
+// ===== CATALOG =====
+var catalogItems = [
+  {id:1,name:'День-Ночь Тонкие',type:'roller',tag:'Рулонные',desc:'Полупрозрачная ткань. Регулирует свет, сохраняет вид.',price:130,density:'thin'},
+  {id:2,name:'День-Ночь Средние',type:'roller',tag:'Рулонные',desc:'Оптимальное затемнение. Идеально для гостиной.',price:160,density:'medium'},
+  {id:3,name:'Blackout Плотные',type:'roller',tag:'Рулонные · Blackout',desc:'Полное затемнение. Для спальни и детской.',price:230,density:'thick'},
+  {id:4,name:'Plisse Lisbon',type:'plisse',tag:'Плиссе',desc:'Мягкая фактура. Нежные цвета. Создаёт уют.',price:150,density:'medium'},
+  {id:5,name:'Plisse Roma',type:'plisse',tag:'Плиссе',desc:'Тёплые натуральные тона. Элегантный стиль.',price:190,density:'medium'},
+  {id:6,name:'Plisse Blackout',type:'plisse',tag:'Плиссе · Blackout',desc:'Полное затемнение в изящном плиссе.',price:230,density:'thick'}
+];
+
+// ===== CATALOG MODAL =====
+function openFabricModal(fabricName, fromCalc) {
+  state._modalFromCalc = fromCalc || false;
+  var samples = JSON.parse(localStorage.getItem('fabricSamples_'+fabricName)||'[]');
+  var modal = document.getElementById('fabricModal');
+  if(!modal) return;
+  document.getElementById('fabricModalTitle').textContent = fabricName;
+  var subtitle = document.getElementById('fabricModalSubtitle');
+  if(subtitle) subtitle.textContent = fromCalc ? 'Выберите образец для расчёта' : 'Коллекция образцов';
+  document.getElementById('fabricModalSelected').innerHTML = '';
+  if(!samples.length){
+    document.getElementById('fabricModalGrid').innerHTML = '<p style="color:#888;font-size:.85rem;text-align:center;padding:20px">Образцы скоро будут добавлены</p>';
+  } else {
+    var grid2 = document.getElementById('fabricModalGrid');
+    grid2.innerHTML = '';
+    for(var i=0;i<samples.length;i++){
+      (function(idx, samp){
+        var card = document.createElement('div');
+        card.className = 'sample-card';
+        card.id = 'sample_'+idx;
+        var img = document.createElement('img');
+        img.src = samp.photo; img.alt = samp.name;
+        img.style.cssText = 'width:100%;height:100%;object-fit:cover';
+        var lbl = document.createElement('div');
+        lbl.className = 'sample-name';
+        lbl.textContent = samp.name;
+        card.appendChild(img); card.appendChild(lbl);
+        card.onclick = function(){ selectSample(this, idx, fabricName); };
+        grid2.appendChild(card);
+      })(i, samples[i]);
+    }
+  }
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function selectSample(el, idx, fabricName) {
+  var samples = JSON.parse(localStorage.getItem('fabricSamples_'+fabricName)||'[]');
+  if(!samples[idx]) return;
+  var s = samples[idx];
+  var cards = document.querySelectorAll('.sample-card');
+  for(var i=0;i<cards.length;i++) cards[i].classList.remove('selected');
+  el.classList.add('selected');
+  state.color = s.name;
+  if(!state.fabric) state.fabric = {};
+  state.fabric.samplePhoto = s.photo;
+  var badge = document.getElementById('fabricModalSelected');
+  if(badge) badge.innerHTML = '<div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:#e8f0f8;border-radius:10px;margin-top:12px">'
+    + '<img src="'+s.photo+'" style="width:36px;height:36px;border-radius:6px;object-fit:cover">'
+    + '<span style="font-size:.88rem;color:#2a5f8f;font-weight:500">Выбран: '+s.name+'</span></div>';
+  // If in calc mode, show Done button highlighted
+  var doneBtn = document.getElementById('modalDoneBtn');
+  if(doneBtn) {
+    doneBtn.style.background = '#25d366';
+    doneBtn.textContent = '✓ Готово — образец выбран';
+  }
+}
+
+function closeFabricModal() {
+  var modal = document.getElementById('fabricModal');
+  if(modal) modal.style.display = 'none';
+  document.body.style.overflow = '';
+
+  recalc();
+  updatePreview();
+}
+
+function closeFabricModalBg(e) {
+  if(e.target === document.getElementById('fabricModal')) closeFabricModal();
+}
+
+// ===== RENDER CATALOG =====
+function renderCatalog(items) {
+  var grid = document.getElementById('catalogGrid');
+  if(!grid) return;
+  var fabricPhotos = JSON.parse(localStorage.getItem('fabricPhotos') || '{}');
+  var customFabrics = JSON.parse(localStorage.getItem('fabrics') || '[]');
+
+  var allItems = [];
+  for(var i=0;i<items.length;i++) allItems.push(items[i]);
+  // Add custom fabrics only if NOT already in base items
+  var baseNames = {};
+  for(var i=0;i<items.length;i++) baseNames[items[i].name] = true;
+  for(var ci=0;ci<customFabrics.length;ci++){
+    var cf = customFabrics[ci];
+    if(!baseNames[cf.name]){
+      allItems.push({id:cf.id,name:cf.name,type:cf.type,tag:cf.type==='roller'?'Рулонные':'Плиссе',desc:cf.desc||'',price:cf.price,density:cf.density});
+    }
+  }
+
+  if(!allItems.length){grid.innerHTML='<p style="color:#888">Нет товаров</p>';return;}
+
+  var h = '';
+  for(var i=0;i<allItems.length;i++){
+    var item = allItems[i];
+    var photo = fabricPhotos[item.name] || null;
+    var samples = JSON.parse(localStorage.getItem('fabricSamples_'+item.name) || '[]');
+    var thumbs = '';
+    for(var si=0;si<Math.min(samples.length,3);si++){
+      thumbs += '<img src="'+samples[si].photo+'" style="width:28px;height:28px;border-radius:4px;object-fit:cover;border:1.5px solid rgba(0,0,0,.08)" title="'+samples[si].name+'">';
+    }
+    if(samples.length>3) thumbs += '<span style="font-size:.72rem;color:#888;margin-left:4px">+'+( samples.length-3)+'</span>';
+
+    var bgStyle = photo ? '' : 'background:'+getDensityGradient(item.density)+';';
+    var imgContent = photo
+      ? '<img src="'+photo+'" style="width:100%;height:100%;object-fit:cover" alt="'+item.name+'">'
+      : getRoomSVG(item.density);
+
+    (function(item, bgStyle, imgContent, thumbs, samples){
+      var card = document.createElement('div');
+      card.className = 'catalog-card';
+      card.setAttribute('data-type', item.type);
+      card.setAttribute('data-density', item.density);
+      card.style.cursor = 'pointer';
+      card.onclick = (function(n){ return function(){ openFabricModal(n); }; })(item.name);
+
+      var priceRow = '<div style="display:flex;justify-content:space-between;align-items:center">'
+        + '<div class="card-price">от '+item.price+' сом/м²</div>'
+        + '<div style="font-size:.75rem;color:#2a5f8f;background:#e8f0f8;padding:4px 10px;border-radius:20px">Выбрать образец →</div>'
+        + '</div>';
+
+      card.innerHTML = '<div class="card-img"><div class="card-img-inner" style="'+bgStyle+'height:100%;display:flex;align-items:center;justify-content:center;">'+imgContent+'</div></div>'
+        + '<div class="card-body">'
+        + '<div class="card-tag">'+item.tag+'</div>'
+        + '<div class="card-name">'+item.name+'</div>'
+        + '<div class="card-desc">'+item.desc+'</div>'
+        + (thumbs ? '<div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">'+thumbs+'</div>' : '')
+        + priceRow
+        + '</div>';
+
+      grid.appendChild(card);
+    })(item, bgStyle, imgContent, thumbs, samples);
+    }
+    // end loop placeholder - grid.innerHTML already done via appendChild
+}
+
+function getDensityGradient(density) {
+  if(density==='thick') return 'linear-gradient(160deg,#3a3a3a,#222)';
+  if(density==='medium') return 'linear-gradient(160deg,#d0dce8,#b8ccd8)';
+  return 'linear-gradient(160deg,#eef3f8,#d8e8f4)';
+}
+
+function getRoomSVG(density) {
+  var isDark = density==='thick';
+  var blindColor = isDark?'rgba(20,20,20,0.92)':'rgba(195,215,235,0.65)';
+  var wallColor = isDark?'#2a2828':'#f0e8dc';
+  var skyColor = isDark?'#181820':'#d8eeff';
+  var stripes = '';
+  for(var i=0;i<9;i++) stripes+='<rect x="54" y="'+(14+i*9)+'" width="92" height="4" fill="rgba(255,255,255,0.1)"/>';
+  return '<svg viewBox="0 0 200 160" fill="none" width="100%" height="100%">'
+    +'<rect width="200" height="160" fill="'+wallColor+'"/>'
+    +'<rect y="132" width="200" height="28" fill="'+(isDark?'#1e1c1c':'#ddd4c0')+'"/>'
+    +'<rect x="52" y="12" width="96" height="106" rx="3" fill="'+skyColor+'" stroke="'+(isDark?'#444':'#c8c0b0')+'" stroke-width="2"/>'
+    +'<rect x="54" y="14" width="92" height="78" fill="'+blindColor+'"/>'+stripes
+    +'<line x1="100" y1="14" x2="100" y2="118" stroke="'+(isDark?'#444':'#b8b0a0')+'" stroke-width="2"/>'
+    +'<rect x="46" y="116" width="108" height="8" rx="2" fill="'+(isDark?'#2a2828':'#c8c0b0')+'"/>'
+    +'</svg>';
+}
+
+function filterCatalog(filter, btn) {
+  var btns = document.querySelectorAll('.filter-btn');
+  for(var i=0;i<btns.length;i++) btns[i].classList.remove('active');
+  btn.classList.add('active');
+  var filtered = [];
+  for(var i=0;i<catalogItems.length;i++){
+    var item = catalogItems[i];
+    if(filter==='all') filtered.push(item);
+    else if(filter==='roller' && item.type==='roller') filtered.push(item);
+    else if(filter==='plisse' && item.type==='plisse') filtered.push(item);
+    else if(filter==='blackout' && item.density==='thick') filtered.push(item);
+  }
+  renderCatalog(filtered);
+}
+
+// ===== CALCULATOR TYPE =====
+function selectType(type) {
+  state.type = type;
+  state.fabric = null;
+  state.color = null;
+  state.sashes = [];
+  state.outsideMounting = (type === 'outside');
+  sashCounter = 0;
+  var sl = document.getElementById('sashList');
+  if(sl) sl.innerHTML = '';
+
+  var typeCards = document.querySelectorAll('.type-card');
+  for(var i=0;i<typeCards.length;i++) typeCards[i].classList.remove('active');
+  var sel = document.querySelector('[data-type="'+type+'"]');
+  if(sel) sel.classList.add('active');
+
+  document.getElementById('step2_full').classList.add('hidden');
+  document.getElementById('step2_parts').classList.add('hidden');
+
+  if(type==='full'){
+    document.getElementById('step2_full').classList.remove('hidden');
+    var oNote = document.getElementById('outsideNote');
+    var iNote = document.getElementById('insideNote');
+    if(oNote) oNote.style.display='none';
+    if(iNote) iNote.style.display='';
+  } else if(type==='outside'){
+    state.type = 'full';
+    document.getElementById('step2_full').classList.remove('hidden');
+    var oNote2 = document.getElementById('outsideNote');
+    var iNote2 = document.getElementById('insideNote');
+    if(oNote2) oNote2.style.display='';
+    if(iNote2) iNote2.style.display='none';
+  } else {
+    document.getElementById('step2_parts').classList.remove('hidden');
+    if(state.sashes.length===0) {
+      // Clear existing sash DOM elements
+      var sl = document.getElementById('sashList');
+      if(sl) sl.innerHTML = '';
+      addSash();
+    }
+  }
+
+  clearResult();
+  showPlaceholder();
+}
+
+// ===== FABRIC =====
+function selectFabric(el, mode) {
+  if(mode==='full'){
+    var fEls = document.querySelectorAll('#fabricFull .fabric-opt');
+    for(var i=0;i<fEls.length;i++) fEls[i].classList.remove('active');
+  } else {
+    var pEls = document.querySelectorAll('#fabricParts_dn .fabric-opt,#fabricParts_plisse .fabric-opt');
+    for(var i=0;i<pEls.length;i++) pEls[i].classList.remove('active');
+  }
+  el.classList.add('active');
+  state.fabric = {name:el.dataset.name, price:parseInt(el.dataset.price), density:el.dataset.density||'thin'};
+  state.color = null;
+  state._calcMode = mode;
+
+  applyLighting(state.fabric.density);
+
+  // Open sample modal so client picks a color/sample
+  openFabricModal(state.fabric.name, true);
+  // Color picker removed - samples modal is used instead
+
+  recalc();
+  updatePreview();
+}
+
+function switchPartsType(type) {
+  var dn = document.getElementById('fabricPartsGroup_dn');
+  var pl = document.getElementById('fabricPartsGroup_plisse');
+  var tabDn = document.getElementById('tab_dn');
+  var tabPl = document.getElementById('tab_plisse');
+  if(dn) dn.style.display = type==='dn'?'':'none';
+  if(pl) pl.style.display = type==='plisse'?'':'none';
+  if(tabDn) tabDn.classList.toggle('active', type==='dn');
+  if(tabPl) tabPl.classList.toggle('active', type==='plisse');
+  state.fabric=null; state.color=null;
+  var allOpts=document.querySelectorAll('#fabricParts_dn .fabric-opt,#fabricParts_plisse .fabric-opt');
+  for(var i=0;i<allOpts.length;i++) allOpts[i].classList.remove('active');
+
+  clearResult(); showPlaceholder();
+}
+
+function calcFull() {
+  state.fullWidth = parseFloat(document.getElementById('fullWidth').value)||0;
+  state.fullHeight = parseFloat(document.getElementById('fullHeight').value)||0;
+  recalc();
+  updatePreview();
+}
+
+function setTop(val) {
+  state.hasTopWindow = val;
+  document.getElementById('topYes').classList.toggle('active', val===true);
+  document.getElementById('topNo').classList.toggle('active', val===false);
+  document.getElementById('topWarn').classList.toggle('hidden', val!==false);
+  recalc();
+}
+
+// ===== SASHES =====
+var sashCounter = 0;
+function addSash() {
+  sashCounter++;
+  var id = sashCounter;
+  state.sashes.push({id:id, width:0, height:0});
+  var list = document.getElementById('sashList');
+  var div = document.createElement('div');
+  div.className = 'sash-item';
+  div.id = 'sash_'+id;
+  var num = document.querySelectorAll('#sashList .sash-item').length + 1;
+  // sash num
+  var numEl = document.createElement('div');
+  numEl.className = 'sash-num'; numEl.textContent = num;
+  // inputs wrap
+  var inpWrap = document.createElement('div');
+  inpWrap.className = 'sash-inputs';
+  var inp1 = document.createElement('input');
+  inp1.type='number'; inp1.placeholder='Ширина (см)'; inp1.min='1';
+  inp1.oninput = (function(sid){ return function(){ updateSash(sid,'width',this.value); }; })(id);
+  var inp2 = document.createElement('input');
+  inp2.type='number'; inp2.placeholder='Высота (см)'; inp2.min='1';
+  inp2.oninput = (function(sid){ return function(){ updateSash(sid,'height',this.value); }; })(id);
+  inpWrap.appendChild(inp1); inpWrap.appendChild(inp2);
+  // area
+  var areaEl = document.createElement('div');
+  areaEl.className = 'sash-area'; areaEl.id = 'sash_area_'+id; areaEl.textContent = '—';
+  // remove btn
+  var remBtn = document.createElement('button');
+  remBtn.className = 'sash-remove'; remBtn.textContent = '✕';
+  remBtn.onclick = (function(sid){ return function(){ removeSash(sid); }; })(id);
+  div.appendChild(numEl); div.appendChild(inpWrap); div.appendChild(areaEl); div.appendChild(remBtn);
+  list.appendChild(div);
+}
+
+function removeSash(id) {
+  var newSashes = [];
+  for(var i=0;i<state.sashes.length;i++) if(state.sashes[i].id!==id) newSashes.push(state.sashes[i]);
+  state.sashes = newSashes;
+  var el = document.getElementById('sash_'+id);
+  if(el) el.parentNode.removeChild(el);
+  renumberSashes();
+  recalc(); updatePreview();
+}
+
+function updateSash(id, field, val) {
+  for(var i=0;i<state.sashes.length;i++){
+    if(state.sashes[i].id===id){
+      state.sashes[i][field] = parseFloat(val)||0;
+      var area = calcSashArea(state.sashes[i].width, state.sashes[i].height);
+      var el = document.getElementById('sash_area_'+id);
+      if(el) el.textContent = state.sashes[i].width&&state.sashes[i].height ? area.toFixed(2)+' м²' : '—';
+      break;
+    }
+  }
+  recalc(); updatePreview();
+}
+
+function renumberSashes() {
+  var items = document.querySelectorAll('#sashList .sash-item');
+  for(var i=0;i<items.length;i++){
+    var n = items[i].querySelector('.sash-num');
+    if(n) n.textContent = i+1;
+  }
+}
+
+function calcSashArea(w, h) {
+  if(!w||!h) return 0;
+  var a = (w/100)*(h/100);
+  return a<1?1:a;
+}
+
+// ===== RECALC =====
+function recalc() {
+  if(!state.fabric) return;
+  var items=[], total=0;
+
+  if(state.type==='full'){
+    var w=state.fullWidth, h=state.fullHeight;
+    if(!w||!h) return;
+    var area=(w/100)*(h/100);
+    total=Math.round(area*state.fabric.price);
+    items=[
+      {label:'Ткань', value:state.fabric.name},
+      {label:'Цвет/образец', value:state.color||'— не выбран'},
+      {label:'Размер', value:w+' × '+h+' см'},
+      {label:'Площадь', value:area.toFixed(2)+' м²'},
+      {label:'Цена за м²', value:state.fabric.price+' сом'}
+    ];
+  } else if(state.type==='parts'){
+    var valid=[];
+    for(var i=0;i<state.sashes.length;i++) if(Number(state.sashes[i].width)>0&&Number(state.sashes[i].height)>0) valid.push(state.sashes[i]);
+    if(!valid.length) return;
+    var totalArea=0;
+    for(var i=0;i<valid.length;i++){
+      var raw=(Number(valid[i].width)/100)*(Number(valid[i].height)/100);
+      var sArea=raw<1?1:raw;
+      totalArea+=sArea;
+      items.push({label:'Створка '+(i+1), value:valid[i].width+'×'+valid[i].height+' см = '+sArea.toFixed(2)+' м²'+(raw<1?' (мин.)':'')});
+    }
+    items.push({label:'Ткань', value:state.fabric.name});
+    items.push({label:'Цвет/образец', value:state.color||'— не выбран'});
+    items.push({label:'Итого площадь', value:totalArea.toFixed(2)+' м²'});
+    items.push({label:'Цена за м²', value:state.fabric.price+' сом'});
+    total=Math.round(totalArea*state.fabric.price);
+  }
+  renderResult(items, total);
+  updatePreview();
+}
+
+function clearResult() {
+  var ri=document.getElementById('resultItems');
+  var rt=document.getElementById('resultTotal');
+  var rc=document.getElementById('resultCta');
+  if(ri) ri.innerHTML='';
+  if(rt) rt.classList.add('hidden');
+  if(rc) rc.classList.add('hidden');
+}
+
+function renderResult(items, total) {
+  var container=document.getElementById('resultItems');
+  if(!container) return;
+  var h='';
+  for(var i=0;i<items.length;i++){
+    h+='<div class="result-item"><span class="result-item-label">'+items[i].label+'</span><span class="result-item-value">'+items[i].value+'</span></div>';
+  }
+  container.innerHTML=h;
+  var tp=document.getElementById('totalPrice');
+  if(tp) tp.textContent=total.toLocaleString('ru-RU')+' сом';
+  var rt=document.getElementById('resultTotal');
+  var rc=document.getElementById('resultCta');
+  if(rt) rt.classList.remove('hidden');
+  if(rc) rc.classList.remove('hidden');
+}
+
+// ===== PREVIEW =====
+function getFabricColor(name) {
+  var map={'День-Ночь Тонкие':'rgba(200,220,240,0.55)','День-Ночь Средние':'rgba(150,178,200,0.7)','Blackout Плотные':'rgba(40,40,40,0.88)','Plisse Lisbon':'rgba(170,205,225,0.65)','Plisse Roma':'rgba(205,190,165,0.7)','Plisse Blackout':'rgba(30,30,30,0.92)'};
+  return map[name]||'rgba(200,220,240,0.55)';
+}
+
+function updatePreview() {
+  var container=document.getElementById('windowPreview');
+  if(!container) return;
+  if(state.type==='full'&&state.fullWidth&&state.fullHeight){
+    var w=state.fullWidth,h=state.fullHeight,ratio=w/h,svgW=200,svgH=Math.round(svgW/ratio);
+    var bc=getFabricColor(state.fabric?state.fabric.name:'');
+    var topH=state.hasTopWindow?Math.round(svgH*0.2):0;
+    var bStart=topH+4,bH=Math.round((svgH-bStart)*0.75);
+    var st='',tr=state.hasTopWindow?'<rect x="4" y="4" width="'+(svgW-8)+'" height="'+topH+'" rx="3" fill="#ddeeff" stroke="#bbb" stroke-width="1.5"/>':'';
+    for(var i=0;i<8;i++) st+='<line x1="6" y1="'+(bStart+i*10)+'" x2="'+(svgW-6)+'" y2="'+(bStart+i*10)+'" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>';
+    container.innerHTML='<svg viewBox="0 0 '+svgW+' '+(svgH+20)+'" style="width:100%;height:auto">'
+      +'<rect x="4" y="4" width="'+(svgW-8)+'" height="'+(svgH-8)+'" rx="3" fill="#eef3f8" stroke="#bbb" stroke-width="2"/>'+tr
+      +'<rect x="6" y="'+bStart+'" width="'+(svgW-12)+'" height="'+bH+'" fill="'+bc+'" opacity="0.88"/>'+st
+      +'<rect x="0" y="'+(svgH-5)+'" width="'+svgW+'" height="8" rx="2" fill="#bbb"/>'
+      +'<text x="'+(svgW/2)+'" y="'+(svgH+16)+'" text-anchor="middle" font-size="9" fill="#888">'+w+' × '+h+' см</text>'
+      +'</svg>';
+  } else if(state.type==='parts'){
+    var valid=[];
+    for(var i=0;i<state.sashes.length;i++) if(Number(state.sashes[i].width)>0&&Number(state.sashes[i].height)>0) valid.push(state.sashes[i]);
+    if(!valid.length){showPlaceholder();return;}
+    var totalW=0,maxH=0;
+    for(var i=0;i<valid.length;i++){totalW+=Number(valid[i].width);if(Number(valid[i].height)>maxH)maxH=Number(valid[i].height);}
+    var svgW2=188,svgH2=108,gap=3,usable=svgW2-gap*(valid.length+1);
+    var bc2=getFabricColor(state.fabric?state.fabric.name:'');
+    var xPos=gap,rects='';
+    for(var i=0;i<valid.length;i++){
+      var rs=valid[i],sw=Math.max(22,Math.round((Number(rs.width)/totalW)*usable)),sh=Math.max(22,Math.round((Number(rs.height)/maxH)*(svgH2-20)));
+      var strH=Math.round(sh*0.7/5),strs='';
+      for(var li=1;li<5;li++) strs+='<line x1="'+(xPos+1)+'" y1="'+(3+li*strH)+'" x2="'+(xPos+sw-1)+'" y2="'+(3+li*strH)+'" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>';
+      rects+='<rect x="'+xPos+'" y="2" width="'+sw+'" height="'+sh+'" rx="3" fill="#e4eff8" stroke="#9ab4c8" stroke-width="1.5"/>'
+        +'<rect x="'+(xPos+1)+'" y="3" width="'+(sw-2)+'" height="'+Math.round(sh*0.7)+'" fill="'+bc2+'" opacity="0.9"/>'+strs
+        +'<text x="'+(xPos+sw/2)+'" y="'+(sh+15)+'" text-anchor="middle" font-size="7" fill="#888">'+rs.width+'×'+rs.height+'</text>';
+      xPos+=sw+gap;
+    }
+    container.innerHTML='<svg viewBox="0 0 '+svgW2+' '+(svgH2+8)+'" style="width:100%;height:auto">'+rects+'</svg>';
+  } else showPlaceholder();
+}
+
+function showPlaceholder() {
+  var el=document.getElementById('windowPreview');
+  if(!el) return;
+  el.innerHTML='<div class="preview-placeholder"><svg viewBox="0 0 120 90" fill="none" width="80" opacity="0.25"><rect x="5" y="5" width="110" height="80" rx="3" stroke="#888" stroke-width="2" fill="none"/><rect x="5" y="5" width="110" height="18" rx="3" fill="#ddd" stroke="#888" stroke-width="1"/><rect x="5" y="25" width="52" height="60" fill="#eee" stroke="#888" stroke-width="1"/><rect x="63" y="25" width="52" height="60" fill="#eee" stroke="#888" stroke-width="1"/></svg><p>Выберите параметры</p></div>';
+}
+
+// ===== WHATSAPP =====
+function sendWhatsApp() {
+  if(!state.fabric) return;
+  var msg = 'Здравствуйте! Хочу заказать жалюзи.\n\n';
+  if(state.type==='full'){
+    var area=((state.fullWidth/100)*(state.fullHeight/100)).toFixed(2);
+    msg += '📋 *Тип:* '+(state.outsideMounting?'Снаружи откоса':'Внутри откоса')+'\n';
+    msg += '🧵 *Ткань:* '+state.fabric.name+'\n';
+    if(state.color) msg += '🎨 *Цвет/образец:* '+state.color+'\n';
+    msg += '📐 *Размер:* '+state.fullWidth+' × '+state.fullHeight+' см\n';
+    msg += '📏 *Площадь:* '+area+' м²\n';
+    if(state.hasTopWindow!==null) msg += '🪟 *Глухое окошко:* '+(state.hasTopWindow?'Да':'Нет')+'\n';
+  } else {
+    msg += '📋 *Тип:* По створкам\n';
+    msg += '🧵 *Ткань:* '+state.fabric.name+'\n';
+    if(state.color) msg += '🎨 *Цвет/образец:* '+state.color+'\n';
+    var valid=[];
+    for(var i=0;i<state.sashes.length;i++) if(state.sashes[i].width>0&&state.sashes[i].height>0) valid.push(state.sashes[i]);
+    for(var i=0;i<valid.length;i++){
+      var a=calcSashArea(valid[i].width,valid[i].height);
+      msg += '🪟 *Створка '+(i+1)+':* '+valid[i].width+' × '+valid[i].height+' см ('+a.toFixed(2)+' м²)\n';
+    }
+  }
+  var total=0;
+  if(state.type==='full') total=Math.round((state.fullWidth/100)*(state.fullHeight/100)*state.fabric.price);
+  else{var va=[];for(var i=0;i<state.sashes.length;i++) if(state.sashes[i].width>0&&state.sashes[i].height>0) va.push(state.sashes[i]);var ta=0;for(var i=0;i<va.length;i++) ta+=calcSashArea(va[i].width,va[i].height);total=Math.round(ta*state.fabric.price);}
+  msg += '\n💰 *Примерная стоимость:* '+total.toLocaleString('ru-RU')+' сом\n';
+  msg += '\nПрошу связаться для уточнения деталей и замера.';
+  var waNum='992000000000';
+  var settings=JSON.parse(localStorage.getItem('settings')||'{}');
+  if(settings.whatsapp) waNum=settings.whatsapp;
+  window.open('https://wa.me/'+waNum+'?text='+encodeURIComponent(msg),'_blank');
+}
+function sendWhatsAppDirect() {
+  var msg='Здравствуйте! Хочу узнать о жалюзи и договориться о замере.';
+  var waNum='992000000000';
+  var settings=JSON.parse(localStorage.getItem('settings')||'{}');
+  if(settings.whatsapp) waNum=settings.whatsapp;
+  window.open('https://wa.me/'+waNum+'?text='+encodeURIComponent(msg),'_blank');
+}
+
+// ===== EXAMPLES =====
+function loadSwatchPhotos() {
+  var photos=JSON.parse(localStorage.getItem('fabricPhotos')||'{}');
+  var fEls=document.querySelectorAll('#fabricFull .fabric-opt');
+  for(var i=0;i<fEls.length;i++){var n=fEls[i].dataset.name;if(photos[n]){var sw=fEls[i].querySelector('.fab-swatch');if(sw){sw.style.backgroundImage='url('+photos[n]+')';sw.style.backgroundSize='cover';sw.style.backgroundPosition='center';}}}
+  var pEls=document.querySelectorAll('#fabricParts_dn .fabric-opt,#fabricParts_plisse .fabric-opt');
+  for(var i=0;i<pEls.length;i++){var n=pEls[i].dataset.name;if(photos[n]){var sw=pEls[i].querySelector('.fab-swatch');if(sw){sw.style.backgroundImage='url('+photos[n]+')';sw.style.backgroundSize='cover';sw.style.backgroundPosition='center';}}}
+}
+
+function renderExamples(mode) {
+  var examples=JSON.parse(localStorage.getItem('examples_'+mode)||'[]');
+  var grid=document.getElementById('examplesGrid_'+mode);
+  if(!grid) return;
+  if(!examples.length){grid.innerHTML='<p class="no-examples">Фото будут добавлены в ближайшее время</p>';return;}
+  grid.innerHTML='';
+  for(var i=0;i<examples.length;i++){
+    (function(src, idx){
+      var thumb = document.createElement('div');
+      thumb.className = 'example-thumb';
+      thumb.onclick = function(){ openLightbox(src); };
+      var img = document.createElement('img');
+      img.src = src; img.alt = 'Пример '+(idx+1); img.loading = 'lazy';
+      thumb.appendChild(img);
+      grid.appendChild(thumb);
+    })(examples[i], i);
+  }
+}
+
+function openLightbox(src) {
+  var lb=document.getElementById('lightbox');
+  var img=document.getElementById('lightboxImg');
+  if(lb&&img){img.src=src;lb.classList.add('open');}
+}
+function closeLightbox() {
+  var lb=document.getElementById('lightbox');
+  if(lb) lb.classList.remove('open');
+}
+
+// ===== SCROLL =====
+window.addEventListener('scroll', function() {
+  var nav=document.getElementById('navbar');
+  if(nav) nav.style.boxShadow=window.scrollY>20?'0 2px 20px rgba(0,0,0,0.1)':'none';
+});
+
+// ===== INIT =====
+
+// ===== CLOUD SYNC (read only) =====
+var JSONBIN_KEY_SITE = 'REMOVED';
+
+function loadFromCloud() {
+  var binId = localStorage.getItem('jsonbin_id');
+  if(!binId) return;
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://api.jsonbin.io/v3/b/' + binId + '/latest');
+  xhr.setRequestHeader('X-Access-Key', JSONBIN_KEY_SITE);
+  xhr.onload = function() {
+    if(xhr.status === 200) {
+      var res = JSON.parse(xhr.responseText);
+      var d = res.record;
+      if(d.fabrics) localStorage.setItem('fabrics', JSON.stringify(d.fabrics));
+      if(d.fabricPhotos) localStorage.setItem('fabricPhotos', JSON.stringify(d.fabricPhotos));
+      if(d.fabricSamples){
+        for(var name in d.fabricSamples){
+          localStorage.setItem('fabricSamples_'+name, JSON.stringify(d.fabricSamples[name]));
+        }
+      }
+      if(d.examples_full) localStorage.setItem('examples_full', JSON.stringify(d.examples_full));
+      if(d.examples_parts) localStorage.setItem('examples_parts', JSON.stringify(d.examples_parts));
+      if(d.settings) localStorage.setItem('settings', JSON.stringify(d.settings));
+      if(d.prices) localStorage.setItem('prices', JSON.stringify(d.prices));
+      // Refresh catalog with new data
+      renderCatalog(catalogItems);
+      renderExamples('full');
+      renderExamples('parts');
+      loadSwatchPhotos();
+    }
+  };
+  xhr.send();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderCatalog(catalogItems);
+  addSash();
+  loadSwatchPhotos();
+  renderExamples('full');
+  renderExamples('parts');
+  loadFromCloud();
+});
+</script>
+
+
+<!-- FABRIC MODAL -->
+<div id="fabricModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:500;align-items:flex-end;justify-content:center" onclick="closeFabricModalBg(event)">
+  <div style="background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:600px;max-height:85vh;overflow-y:auto;padding:24px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <div>
+        <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#888;margin-bottom:4px">Выберите образец</div>
+        <div id="fabricModalTitle" style="font-family:Cormorant Garamond,serif;font-size:1.5rem;color:#1a1a18"></div>
+        <div id="fabricModalSubtitle" style="font-size:.78rem;color:#888;margin-top:2px"></div>
+      </div>
+      <button onclick="closeFabricModal()" style="width:36px;height:36px;border-radius:50%;border:none;background:#f0f0ec;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+    </div>
+    <div id="fabricModalGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px"></div>
+    <div id="fabricModalSelected"></div>
+    <button id="modalDoneBtn" onclick="closeFabricModal()" style="width:100%;margin-top:16px;padding:14px;background:#1a1a18;color:#fff;border:none;border-radius:30px;font-family:DM Sans,sans-serif;font-size:.9rem;font-weight:500;cursor:pointer;transition:background .3s">Готово</button>
+  </div>
+</div>
+</body>
+</html>
